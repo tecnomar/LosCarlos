@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/accent"
-    tools:context=".Fragment1">
+    android:background="@color/accent">
 
     <TextView
         android:id="@+id/textView2"
@@ -59,4 +58,17 @@
         app:layout_constraintTop_toBottomOf="@+id/descripcion1"
         app:layout_constraintVertical_bias="0.863"
         tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/ingresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion2"
+        app:layout_constraintVertical_bias="0.507" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

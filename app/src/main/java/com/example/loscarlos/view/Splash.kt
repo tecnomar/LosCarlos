@@ -1,4 +1,4 @@
-package com.example.loscarlos
+package com.example.loscarlos.view
 
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.example.loscarlos.R
 import com.example.loscarlos.databinding.SplashScreenBinding
 
 class Splash : AppCompatActivity() {
@@ -31,12 +32,10 @@ class Splash : AppCompatActivity() {
 
         val pagerAdapter = ScreenSlidePagerAdapter(supportFragmentManager)
         viewPager.adapter = pagerAdapter
+    }
 
-        //binding.logo.animate().translationY().setDuration(1000).startDelay = 4000
-//        binding.nombre.animate().translationY(Float.MIN_VALUE).setDuration(1000).startDelay = 4000
-//        binding.fondoCurvo.animate().translationY(Float.MIN_VALUE).setDuration(1000).startDelay = 4000
-//        binding.animationView.animate().translationY(Float.MIN_VALUE).setDuration(1000).startDelay = 4000
-
+    override fun onResume() {
+        super.onResume()
         ObjectAnimator.ofFloat(binding.fondoCurvo, "translationY", -2400f).apply {
             duration = 2000
             startDelay = 4000
@@ -71,11 +70,7 @@ class Splash : AppCompatActivity() {
                 binding.animationView.cancelAnimation()
             }
         }.start()
-
-
-        //startActivity(Intent(this, MainActivity::class.java))
     }
-
 
     private inner class ScreenSlidePagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         override fun getCount(): Int = 3

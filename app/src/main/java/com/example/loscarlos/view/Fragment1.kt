@@ -1,11 +1,13 @@
-package com.example.loscarlos
+package com.example.loscarlos.view
 
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.loscarlos.R
 import com.example.loscarlos.databinding.Fragment1Binding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,6 +52,10 @@ class Fragment1 : Fragment() {
         binding.loginAnimationView.setAnimation(R.raw.login)
         binding.loginAnimationView.playAnimation()
         binding.loginAnimationView.repeatCount = ValueAnimator.INFINITE
+        binding.ingresar.setOnClickListener {
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     companion object {
